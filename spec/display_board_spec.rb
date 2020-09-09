@@ -124,7 +124,7 @@ describe "#display_board in 'lib/display_board.rb" do
       expect(rows[4]).to eq(" X | O | O ")
 
 
-      board = ["X", "O", "X", "", "X", "X", "O", "X", "O"]
+      board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
 
       output = capture_puts{ display_board(board) }
       rows = output.split("\n")
