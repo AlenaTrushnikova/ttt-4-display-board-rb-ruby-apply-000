@@ -108,7 +108,7 @@ describe "#display_board in 'lib/display_board.rb" do
       expect(rows[1]).to eq("-----------")
       expect(rows[2]).to eq("   | O |   ")
       expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq(" O |   |   ")
+      expect(rows[4]).to eq(" O O|   |   ")
     end
 
     it 'prints arbitrary arrangements of the board' do
@@ -124,7 +124,7 @@ describe "#display_board in 'lib/display_board.rb" do
       expect(rows[4]).to eq(" X | O | O ")
 
 
-      board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
+      board = ["X", "O", "X", "", "X", "X", "O", "X", "O"]
 
       output = capture_puts{ display_board(board) }
       rows = output.split("\n")
@@ -186,28 +186,16 @@ describe "#display_board in 'lib/display_board.rb" do
       # *** Comment the line below by adding a # at the line start ***
       # expect(true).to be(true)
       
-      board = ["0", "0", "X", "X", "O", "O", "X", "O", "O"]
+      board = ["O", "O", "O", "O", "O", "O", "O", "O", "O"]
 
       output = capture_puts{ display_board(board) }
       rows = output.split("\n")
 
-      expect(rows[0]).to eq(" X | X | X ")
+      expect(rows[0]).to eq(" O | O | O ")
       expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq(" X | O | O ")
+      expect(rows[2]).to eq(" O | O | O ")
       expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq(" X | O | O ")
-
-
-      board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
-
-      output = capture_puts{ display_board(board) }
-      rows = output.split("\n")
-
-      expect(rows[0]).to eq(" X | O | X ")
-      expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq(" O | X | X ")
-      expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq(" O | X | O ")
+      expect(rows[4]).to eq(" O | O | O ")
       
     end
   end
